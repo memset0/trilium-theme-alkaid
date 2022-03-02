@@ -8,4 +8,4 @@
 
 ### Screenshots
 
-(to be added...)
+![](/memset0/trilium-theme-alkaid/blob/master/screenshots/1.png?raw=true)
