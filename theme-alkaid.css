@@ -1,16 +1,47 @@
+@font-face {
+    font-family: "SourceHansSansCN-ExtraLight";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-ExtraLight.otf');
+}
+
+@font-face {
+    font-family: "SourceHansSansCN-Light";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Light.otf');
+}
+
+@font-face {
+    font-family: "SourceHansSansCN-Normal";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Normal.otf');
+}
+
+@font-face {
+    font-family: "SourceHansSansCN-Regular";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Regular.otf');
+}
+
+@font-face {
+    font-family: "SourceHansSansCN-Bold";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Bold.otf');
+}
+
+
+@font-face {
+    font-family: "SourceHansSansCN-Heavy";
+    src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Heavy.otf');
+}
+
 :root {
     --theme-style: light;
 
-    --main-font-family: MontserratLight;
+    --main-font-family: Helvetica, "Source Han Sans CN", "SourceHansSansCN-Regular", sans-serif;
     --main-font-size: normal;
 
-    --tree-font-family: MontserratLight;
+    --tree-font-family: var(--main-font-family);
     --tree-font-size: normal;
 
-    --detail-font-family: MontserratLight;
+    --detail-font-family: var(--main-font-family);
     --detail-font-size: normal;
 
-    --monospace-font-family: JetBrainsLight;
+    --monospace-font-family: 'Source Code Pro', Consolas, Monaco, JetBrainsLight, monospace;
     --monospace-font-size: normal;
 
     --main-background-color: white;
@@ -89,20 +120,36 @@
 .gutter.gutter-horizontal {
     width: 4px !important;
 }
+#launcher-pane .tooltip {
+    color: var(--main-border-color) !important;
+}
 
 .tab-row-widget .note-tab {
     width: 245px !important;
 }
+.tab-row-widget .note-tab .note-tab-title {
+    font-size: 14px !important;
+    line-height: 23px !important;
+}
+.tab-row-widget .note-tab .note-tab-close {
+    width: 25px !important;
+    height: 25px !important;
+}
+.tab-row-widget .note-tab .note-tab-close span {
+    font-size: 16px !important;
+    line-height: 36px !important;
+}
 .tab-row-widget .note-tab .note-tab-wrapper {
     padding: 5px 4px 6px 10px !important;
-    border: 1px solid rgb(246, 248, 250) !important;
+    border: 1px solid var(--inactive-tab-background-color) !important;
     border-top-width: 2px !important;
-    border-right-color: rgb(208, 215, 222) !important;
-    border-bottom-color: rgb(208, 215, 222) !important;
+    border-right-color: var(--main-border-color) !important;
+    border-bottom-color: var(--main-border-color) !important;
     border-radius: 0px !important;
-    transition: border-color .1s, background-color .1s;
+    transition: border-color .1s, color .1s, background-color .1s;
 }
 .tab-row-widget .note-tab:hover .note-tab-wrapper {
+    color: var(--main-text-color) !important;
     border-top-color: var(--inactive-tab-hover-background-color) !important;
     border-left-color: var(--inactive-tab-hover-background-color) !important;
 }
@@ -132,8 +179,8 @@
 }
 
 .shared-info-widget {
-    margin: 32px !important;
-    padding: 16px !important;
+    margin: 16px 32px !important;
+    padding: 12px 16px !important;
 }
 
 /* ---------------- Note Content ---------------- */
