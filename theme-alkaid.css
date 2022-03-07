@@ -23,7 +23,6 @@
     src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Bold.otf');
 }
 
-
 @font-face {
     font-family: "SourceHansSansCN-Heavy";
     src: url('/custom/theme/alkaid/fonts/SourceHanSansCN-Heavy.otf');
@@ -32,7 +31,7 @@
 :root {
     --theme-style: light;
 
-    --main-font-family: Helvetica, "Source Han Sans CN", "SourceHansSansCN-Regular", sans-serif;
+    --main-font-family: "Source Han Sans CN", "SourceHansSansCN-Regular", sans-serif;
     --main-font-size: normal;
 
     --tree-font-family: var(--main-font-family);
@@ -97,7 +96,7 @@
     --link-color: blue;
 
     --mermaid-theme: default;
-    
+
     --theme-accent-color: #FD8C73;
 }
 
@@ -107,19 +106,33 @@
 
 /* ---------------- UI Layout ---------------- */
 
+#right-pane,
 .gutter.gutter-horizontal {
     background-color: var(--left-pane-background-color) !important;
 }
+
 #left-pane .search-string {
     background: #FFFFFF !important;
     border-radius: 0px !important;
 }
+
 .tree .fancytree-active {
     background-color: #E2E4E6 !important;
 }
+
+#left-pane,
+#right-pane {
+    z-index: 101 !important;
+}
+
 .gutter.gutter-horizontal {
     width: 4px !important;
+    z-index: 100 !important;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 1px 5px 0 rgba(0, 0, 0, .12) !important;
 }
+
 #launcher-pane .tooltip {
     color: var(--main-border-color) !important;
 }
@@ -127,18 +140,23 @@
 .tab-row-widget .note-tab {
     width: 245px !important;
 }
+
 .tab-row-widget .note-tab .note-tab-title {
     font-size: 14px !important;
     line-height: 23px !important;
 }
+
 .tab-row-widget .note-tab .note-tab-close {
     width: 25px !important;
     height: 25px !important;
 }
+
 .tab-row-widget .note-tab .note-tab-close span {
-    font-size: 16px !important;
+    font-size: 22px !important;
+    font-weight: normal !important;
     line-height: 36px !important;
 }
+
 .tab-row-widget .note-tab .note-tab-wrapper {
     padding: 5px 4px 6px 10px !important;
     border: 1px solid var(--inactive-tab-background-color) !important;
@@ -148,11 +166,13 @@
     border-radius: 0px !important;
     transition: border-color .1s, color .1s, background-color .1s;
 }
+
 .tab-row-widget .note-tab:hover .note-tab-wrapper {
     color: var(--main-text-color) !important;
     border-top-color: var(--inactive-tab-hover-background-color) !important;
     border-left-color: var(--inactive-tab-hover-background-color) !important;
 }
+
 .tab-row-widget .note-tab[active] .note-tab-wrapper {
     border-top-color: var(--theme-accent-color) !important;
     border-left-color: #FFFFFF !important;
@@ -174,8 +194,14 @@
     background-color: #F6F6F6 !important;
     transition: background-color .25s;
 }
+
 .grid-view .note-book-card:hover {
     background-color: #EBEBEB !important;
+}
+
+.grid-view .note-book-card .ck-content p,
+.grid-view .note-book-card .ck-content span {
+    background-color: #0000 !important;
 }
 
 .shared-info-widget {
@@ -184,3 +210,62 @@
 }
 
 /* ---------------- Note Content ---------------- */
+
+
+
+
+
+/* ---------------- Editor ---------------- */
+
+.CodeMirror-linenumber {
+    font-family: var(--monospace-font-family);
+    font-size: 11px;
+    line-height: 24px;
+}
+
+.note-detail-editable-text-editor.ck p,
+.note-detail-editable-text-editor.ck h1,
+.note-detail-editable-text-editor.ck h2,
+.note-detail-editable-text-editor.ck h3,
+.note-detail-editable-text-editor.ck h4,
+.note-detail-editable-text-editor.ck h5,
+.note-detail-editable-text-editor.ck h6 {
+    line-height: 1.55;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.note-detail-editable-text-editor.ck h1,
+.note-detail-editable-text-editor.ck h2,
+.note-detail-editable-text-editor.ck h3,
+.note-detail-editable-text-editor.ck h4,
+.note-detail-editable-text-editor.ck h5,
+.note-detail-editable-text-editor.ck h6 {
+    font-weight: bold !important;
+}
+
+.note-detail-editable-text-editor.ck h3,
+.note-detail-editable-text-editor.ck h4,
+.note-detail-editable-text-editor.ck h5,
+.note-detail-editable-text-editor.ck h6 {
+    border: none !important;
+}
+
+.note-detail-editable-text-editor.ck h1 {
+    margin-block-start: 25px;
+}
+
+.note-detail-editable-text-editor.ck h2 {
+    margin-block-start: 20px;
+}
+
+.note-detail-editable-text-editor.ck h3 {
+    margin-block-start: 15px;
+}
+
+.note-detail-editable-text-editor.ck li {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+/* ---------------- CK-Editor ---------------- */
