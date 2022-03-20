@@ -66,10 +66,10 @@
     --input-background-color: transparent;
 
     --hover-item-text-color: black;
-    --hover-item-background-color: #ddd;
+    --hover-item-background-color: #E6E8EA;
 
     --active-item-text-color: black;
-    --active-item-background-color: #ddd;
+    --active-item-background-color: #E6E8EA;
 
     --menu-text-color: black;
     --menu-background-color: white;
@@ -78,7 +78,7 @@
     --modal-backdrop-color: black;
 
     --left-pane-background-color: #F6F8FA;
-    --left-pane-text-color: #333;
+    --left-pane-text-color: #222;
 
     --launcher-pane-background-color: #F6F8FA;
     --launcher-pane-text-color: #333;
@@ -91,8 +91,8 @@
     --inactive-tab-hover-background-color: #F1F3F6;
     --inactive-tab-text-color: #57606A;
 
-    --scrollbar-border-color: #ddd;
-    --tooltip-background-color: #f8f8f8;
+    --scrollbar-border-color: #D0D0D0;
+    --tooltip-background-color: #F8F8F8;
     --link-color: blue;
 
     --mermaid-theme: default;
@@ -105,6 +105,37 @@
 
 
 /* ---------------- UI Layout ---------------- */
+
+#launcher-pane .icon-action {
+    border-radius: 0px !important;
+}
+
+#launcher-pane .dropdown-menu {
+    margin-left: 10px !important;
+    border-radius: 4px !important;
+    border: none;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 1px 5px 0 rgba(0, 0, 0, .12) !important;
+}
+
+#launcher-pane .dropdown-menu .dropdown-item {
+    padding: 0.5rem 1.5rem !important;
+}
+
+#launcher-pane .dropdown-menu .dropdown-item>span.bx {
+    margin-right: 5px !important;
+    font-size: 18px !important;
+}
+
+#launcher-pane .global-menu-button {
+    background: url("/custom/theme/alkaid/avatar.png") no-repeat !important;
+    background-size: 100% 100% !important;
+    border-radius: 50% !important;
+    margin: 8px;
+    height: calc(100% - 16px) !important;
+    width: calc(100% - 16px) !important;
+}
 
 #right-pane,
 .gutter.gutter-horizontal {
@@ -177,6 +208,10 @@
     border-top-color: var(--theme-accent-color) !important;
     border-left-color: #FFFFFF !important;
     border-bottom-color: #FFFFFF !important;
+}
+
+span.fancytree-node.multiple-parents .fancytree-title::after {
+    color: var(--active-item-background-color);
 }
 
 /* ---------------- UI Layout ---------------- */
@@ -266,6 +301,18 @@
 .note-detail-editable-text-editor.ck li {
     margin-block-start: 5px;
     margin-block-end: 5px;
+}
+
+.note-detail-editable-text-editor.ck blockquote {
+    font-style: normal !important;
+}
+
+.note-detail-editable-text-editor.ck blockquote>*:first-child {
+    margin-top: 5px !important;
+}
+
+.note-detail-editable-text-editor.ck blockquote>*:last-child {
+    margin-bottom: 5px !important;
 }
 
 /* ---------------- CK-Editor ---------------- */
